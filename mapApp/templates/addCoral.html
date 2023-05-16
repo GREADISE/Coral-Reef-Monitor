@@ -1,0 +1,65 @@
+{% extends 'optionMenu.html' %}
+
+{% block title %}Add Coral Reef{% endblock %}
+
+
+{% block addHead %}
+       <link rel="stylesheet" type="text/css" href="../static/css/addCoral.css">
+{% endblock %}
+
+{% block addBody %}
+        <div class="backgroundImage">
+          <h1>Add Coral Reef</h1>
+          <form method="post">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="latitude">Latitude:</label>
+            <input type="text" id="latitude" name="latitude" required><br><br>
+
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="longitude" name="longitude" required><br><br>
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+
+{% endblock %}
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html>
+    <head>
+       <link rel="stylesheet" type="text/css" href="../static/css/addCoral.css">
+      <title>Add Coral Reef</title>
+    </head>
+    <body>
+        <div class="backgroundImage">
+          <h1>Add Coral Reef</h1>
+          <form method="post">
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="latitude">Latitude:</label>
+            <input type="text" id="latitude" name="latitude" required><br><br>
+
+            <label for="longitude">Longitude:</label>
+            <input type="text" id="longitude" name="longitude" required><br><br>
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+            <input type="submit" value="Submit">
+          </form>
+         </div>
+    </body>
+</html>

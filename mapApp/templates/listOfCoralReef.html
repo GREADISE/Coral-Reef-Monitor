@@ -1,0 +1,64 @@
+{% extends 'optionMenu.html' %}
+
+{% block title %}Coral Reef List{% endblock %}
+
+{% block listHead %}
+    <link rel="stylesheet" type="text/css" href="../static/css/listOfCoralReef.css">
+{% endblock %}
+
+{% block listBody %}
+         <div class="backgroundImage">
+              <h1>Coral Reef List</h1>
+              <ul>
+                {% for reef in coral_reefs %}
+                  <li>
+                    <span>Name: {{ reef.name }}</span>
+                    <span>latitude: {{ reef.latitudeC }}</span>
+                    <span>longitude: {{ reef.longitudeC }}</span>
+                    <span>
+                        <form action="{% url 'delete_reef' reef.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">delete</button>
+                        </form>
+                    </span>
+                  </li>
+                {% empty %}
+                  <li class="empty-message">No coral reefs found.</li>
+                {% endfor %}
+              </ul>
+         </div>
+{% endblock %}
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+       <link rel="stylesheet" type="text/css" href="../static/css/listOfCoralReef.css">
+      <title>Coral Reef List</title>
+    </head>
+    <body>
+         <div class="backgroundImage">
+              <h1>Coral Reef List</h1>
+              <ul>
+                {% for reef in coral_reefs %}
+                  <li>
+                    <span>Name: {{ reef.name }}</span>
+                    <span>latitude: {{ reef.latitudeC }}</span>
+                    <span>longitude: {{ reef.longitudeC }}</span>
+                    <span>
+                        <form action="{% url 'delete_reef' reef.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">delete</button>
+                        </form>
+                    </span>
+                  </li>
+                {% empty %}
+                  <li class="empty-message">No coral reefs found.</li>
+                {% endfor %}
+              </ul>
+         </div>
+    </body>
+</html>

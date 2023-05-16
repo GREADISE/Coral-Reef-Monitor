@@ -1,0 +1,14 @@
+#map {
+  position: relative;
+  height: 96.91vh;
+  width: 100vw;
+}
+
+.addButton{
+  position: absolute;
+  top: 90%;
+  left: 93%;
+  width: 100px;
+  height: 100px;
+}
+

@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.backgroundImage{
+  background-image: url("../img/listOfCoralReef.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #e8efef;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: rgb(243, 241, 236, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+li span {
+  flex: 1;
+  text-align: center;
+}
+
+li span:not(:last-child) {
+  margin-right: 10px;
+}
+
+li:hover {
+  background-color: #f1f1f1;
+}
+
+.empty-message {
+  color: #888;
+}

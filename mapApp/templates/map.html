@@ -1,0 +1,33 @@
+{% extends 'optionMenu.html' %}
+{% block title %}Coral Reef Map{% endblock %}
+
+{% block mapHead %}
+    <link rel="stylesheet" type="text/css" href="../static/css/map.css">
+    <script src="../static/js/map.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXhRpGEMhvszGW3citFrRQptCBWzsFDN0&callback=initMap&language=en"></script>
+{% endblock %}
+
+{% block mapBody %}
+    <div id="map"></div>
+
+    <script>
+        var coralReefPin = [
+            {% for coralreef in coralReefPin %}
+                {
+                    name: '{{ coralreef.name }}',
+                    latitudeC: {{ coralreef.latitudeC }},
+                    longitudeC: {{ coralreef.longitudeC }},
+                    description: '{{ coralreef.description }}',
+                },
+            {% endfor %}
+        ];
+    </script>
+
+
+
+{% endblock %}
+
+
+
+
