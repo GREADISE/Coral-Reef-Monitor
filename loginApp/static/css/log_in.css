@@ -1,7 +1,15 @@
+html, body {
+  margin: 0;
+}
 
-body {
+.loginContainer {
   background-image: url("../img/log_in.jpg");
   background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {

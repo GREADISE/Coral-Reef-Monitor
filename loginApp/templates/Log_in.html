@@ -7,28 +7,30 @@
      <link rel="icon" href="../static/img/icon.png" type="image/png">
   </head>
   <body>
-    <h1>Coral Reef Monitor App</h1>
-    <form method="POST">
-        {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="username" id="username" name="username" required>
-        <br>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <br>
-        <input type="submit" value="Login">
-        <a href="{% url 'signUp' %}" class="signup-link">Don't have acccount?</a>
-    </form>
-    <script>
-        var userExists = "{{ user_exists|default_if_none:"" }}";
+      <div class = loginContainer>
+        <h1>Coral Reef Monitor App</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="username" id="username" name="username" required>
+            <br>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <br>
+            <input type="submit" value="Login">
+            <a href="{% url 'signUp' %}" class="signup-link">Don't have acccount?</a>
+        </form>
+        <script>
+            var userExists = "{{ user_exists|default_if_none:"" }}";
 
-        console.log(userExists)
-        if (userExists === "false") {
-          alert("userName or passWord incorrect");
-        }
-    </script>
+            console.log(userExists)
+            if (userExists === "false") {
+              alert("userName or passWord incorrect");
+            }
+        </script>
+      </div>
   </body>
 </html>
 

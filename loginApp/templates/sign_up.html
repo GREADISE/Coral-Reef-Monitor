@@ -7,21 +7,23 @@
       <link rel="icon" href="../static/img/icon.png" type="image/png">
     </head>
     <body>
-      <form method="POST">
-          {% csrf_token %}
-        <h2>Sign up</h2>
-        <label>Username:</label>
-        <input type="text" name="username" required>
-        <label>Password:</label>
-        <input type="password" name="password" required>
-        <input type="submit" value="Sign up">
-      </form>
-      <script>
-        var userExists = "{{ user_exists|default_if_none:"" }}";
+        <div class = signUpContainer    >
+          <form method="POST">
+              {% csrf_token %}
+            <h2>Sign up</h2>
+            <label>Username:</label>
+            <input type="text" name="username" required>
+            <label>Password:</label>
+            <input type="password" name="password" required>
+            <input type="submit" value="Sign up">
+          </form>
+          <script>
+            var userExists = "{{ user_exists|default_if_none:"" }}";
 
-        if ((userExists && userExists !== "False")) {
-          alert("User already exists. Please choose a different username.");
-        }
-      </script>
+            if ((userExists && userExists !== "False")) {
+              alert("User already exists. Please choose a different username.");
+            }
+          </script>
+         </div>
     </body>
 </html>

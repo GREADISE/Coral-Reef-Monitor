@@ -1,15 +1,26 @@
-body {
+html, body {
+    margin: 0;
+}
+
+.signUpContainer {
     background-image: url("../img/sign_up.jpg");
     background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+
 form {
   width: 400px;
-  margin: 50px auto;
+  margin: auto;
   padding: 80px;
   background-color: rgba(187, 255, 255, 0.5);
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 15%;
+  margin-top: 350px;
 }
 h2 {
   margin-top: 0px;
