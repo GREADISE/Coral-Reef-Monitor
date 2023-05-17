@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 
 def login_check(request):
@@ -27,7 +28,7 @@ def sign_up(request):
         passwordInput = request.POST['password']
 
         if User.objects.filter(username=usernameInput).exists():
-            user_exists = True
+            user_exists = "True"
         else:
             User.objects.create_user(username=usernameInput, password=passwordInput)
             return redirect('login')

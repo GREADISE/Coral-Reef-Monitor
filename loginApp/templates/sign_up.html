@@ -7,7 +7,7 @@
       <link rel="icon" href="../static/img/icon.png" type="image/png">
     </head>
     <body>
-        <div class = signUpContainer    >
+        <div class = signUpContainer>
           <form method="POST">
               {% csrf_token %}
             <h2>Sign up</h2>
@@ -20,7 +20,7 @@
           <script>
             var userExists = "{{ user_exists|default_if_none:"" }}";
 
-            if ((userExists && userExists !== "False")) {
+            if (userExists === "True") {
               alert("User already exists. Please choose a different username.");
             }
           </script>
