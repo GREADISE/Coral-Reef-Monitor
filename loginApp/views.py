@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from django.contrib import messages
+from django.contrib.auth import logout
 
 
 def login_check(request):
@@ -38,3 +38,7 @@ def sign_up(request):
 
 def welcome(request):
     return render(request, 'welcome.html')
+
+def logOut(request):
+    logout(request)
+    return redirect('login')

@@ -19,9 +19,11 @@
                     latitudeC: {{ coralreef.latitudeC }},
                     longitudeC: {{ coralreef.longitudeC }},
                     description: '{{ coralreef.description }}',
+                    observer: {{ coralreef.observer_id }}
                 },
             {% endfor %}
         ];
+        var currentUserId = {{ userId }};
     </script>
 
 

@@ -11,17 +11,19 @@
               <h1>Coral Reef List</h1>
               <ul>
                 {% for reef in coral_reefs %}
-                  <li>
-                    <span>Name: {{ reef.name }}</span>
-                    <span>latitude: {{ reef.latitudeC }}</span>
-                    <span>longitude: {{ reef.longitudeC }}</span>
-                    <span>
-                        <form action="{% url 'delete_reef' reef.id %}" method="post">
-                            {% csrf_token %}
-                            <button type="submit">delete</button>
-                        </form>
-                    </span>
-                  </li>
+                    {% if reef.observer_id == userId %}
+                      <li>
+                        <span>Name: {{ reef.name }}</span>
+                        <span>latitude: {{ reef.latitudeC }}</span>
+                        <span>longitude: {{ reef.longitudeC }}</span>
+                        <span>
+                            <form action="{% url 'delete_reef' reef.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit">delete</button>
+                            </form>
+                        </span>
+                      </li>
+                    {% endif %}
                 {% empty %}
                   <li class="empty-message">No coral reefs found.</li>
                 {% endfor %}

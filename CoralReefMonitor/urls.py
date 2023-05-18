@@ -21,12 +21,14 @@ import mapApp.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', loginApp.views.login_check, name='login'),
+    path('', loginApp.views.login_check, name='directToLogin'),
     path('signUp/', loginApp.views.sign_up, name='signUp'),
     path('map/', mapApp.views.map, name='map'),
     path('listOfCoralReef/', mapApp.views.listOfCoralReef, name='listOfCoralReef'),
     path('addCoral/', mapApp.views.addCoral, name='addCoral'),
     path('welcome/', loginApp.views.welcome, name='welcome'),
     path('coral-reef/delete/<int:reef_id>/', mapApp.views.delete_coral_reef, name='delete_reef'),
+    path('logOut/', loginApp.views.logOut, name='logOut'),
 ]
 
 

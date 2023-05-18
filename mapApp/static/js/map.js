@@ -8,29 +8,30 @@ function initMap() {
 
       coralReefPin.forEach(function (coralReef) {
 
-            console.log(coralReef)
+          //console.log(coralReef)
 
-            var coralMarker = new google.maps.Marker({
-              position: {lat: coralReef.latitudeC, lng: coralReef.longitudeC},
-              map: mapCoral,
-              title: ''
-            });
+          if(coralReef.observer === currentUserId) {
+
+              var coralMarker = new google.maps.Marker({
+                  position: {lat: coralReef.latitudeC, lng: coralReef.longitudeC},
+                  map: mapCoral,
+                  title: ''
+              });
 
 
-            var infoWindow = new google.maps.InfoWindow({
-               content: '<h1>' + coralReef.name + '</h1><p>' + coralReef.description + '</p>'
-            });
+              var infoWindow = new google.maps.InfoWindow({
+                  content: '<h1>' + coralReef.name + '</h1><p>' + coralReef.description + '</p>'
+              });
 
-            coralMarker.addListener("mouseover", function() {
-              infoWindow.open(mapCoral, coralMarker);
-            });
+              coralMarker.addListener("mouseover", function () {
+                  infoWindow.open(mapCoral, coralMarker);
+              });
 
-            coralMarker.addListener("mouseout", function() {
-              infoWindow.close();
-            });
-
+              coralMarker.addListener("mouseout", function () {
+                  infoWindow.close();
+              });
+          }
       })
-
 }
 
 

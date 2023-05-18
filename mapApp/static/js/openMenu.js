@@ -9,3 +9,7 @@ function openTabLCR() {
 function openTabAC(){
     window.location.href = "../addCoral";
 }
+
+function logOut(){
+    window.location.href = "../logOut";
+}
